@@ -12,6 +12,7 @@ body{
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
+    background: #ecb16a;
 }
 
 .dress{
@@ -26,9 +27,8 @@ body{
 
 .dress.overlay-dress{
     z-index: 2;
-    fill: #FCFF4D;
+    fill: #E7E7FC;
     mix-blend-mode: multiply;
-    opacity: 0.9;
     position: absolute;
     top: 0;
     left: 0;
@@ -54,12 +54,8 @@ body{
   }
 
 .colours__inputs input{
-    -webkit-appearance: none;
-    background: none;
     border: none;
-    outline: none;
     display: block;
-    border: 0;
     height: 40px;
     width: 150px;
     margin: 0;
