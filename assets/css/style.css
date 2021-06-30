@@ -116,11 +116,11 @@ body{
     grid-template-areas: "dress pickers";
   }
   .dress {
-    padding: 0;
+    padding-left: 0;
     transform: scale(0.7);
   }
   .dress.overlay-dress{
-  padding: 0;
+    padding-left: 0;
   }
   .colours__inputs{
     flex-direction: column;
@@ -133,10 +133,10 @@ body{
       grid-template-areas: "dress pickers";
     }
     .dress {
-      padding: 0;
+      padding-left: 0;
       transform: scale(0.75);
     }
     .dress.overlay-dress{
-    padding: 0;
+      padding-left: 0;
     }
 }
