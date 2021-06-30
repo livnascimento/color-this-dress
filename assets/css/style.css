@@ -1,25 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 *{
-    font-family: 'Montserrat';
-    padding: 0;
-    margin: 0px;
+  font-family: 'Montserrat';
+  padding: 0px;
+  margin: 0px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body{
-    height: 100%;
-    display: grid;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    background: #ecb16a;
+  justify-content: center;
+  align-items: center;
+  background: #ecb16a;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 70vw 30vw;
+  grid-template-areas: "dress pickers";
+  justify-content: center;
+  align-items: center;
 }
 
 .dress{
-    position: relative;
-    transition: 0.25s ease-in-out;
+  /* justify-content: center;
+  align-items: center; */
+  padding-left: 150px;
+  position: relative;
+  transition: 0.1s ease-in-out;
+  grid-area: dress;
 }
 
 .dress.dress-img, .dress.overlay-dress{
@@ -28,24 +40,30 @@ body{
 }
 
 .dress.overlay-dress{
+  padding-left: 150px;
     z-index: 2;
     fill: #E7E7FC;
     mix-blend-mode: multiply;
     position: absolute;
-    top: 0;
-    left: 0;
+
 }
 
 .dress.overlay-dress.fade{
     transition: 0.6s ease-in-out;
 }
 
+.colours__inputs {
+  grid-area: pickers;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .input-wrapper{
+  justify-content: center;
+  flex-direction: column;
   height: 90px;
   width: 174px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   padding: 10px;
 }
 
@@ -53,16 +71,9 @@ body{
     padding-bottom: 10px;
 }
 
-.colours__inputs {
-  position: absolute;
-  bottom: 1em;
-  display: flex;
-  flex-direction: column;
-  }
 
 .colours__inputs input{
     border: none;
-    display: block;
     height: 40px;
     width: 100%;
     margin: 0;
@@ -83,22 +94,49 @@ body{
 }
 
 @media (max-width: 940px) {
-    .dress {
-      height: 50%;
-      transform: scale(0.8);
-    }
-    .colours__inputs{
-      flex-direction: column;
-    }
+   .container{
+    grid-template-columns: 50vw 50vw;
+    grid-template-areas: "dress pickers";
+  } 
+  .dress {
+    padding-left: 50px;
+    transform: scale(0.85);
   }
-  @media (max-width: 580px) {
+  .dress.overlay-dress{
+    padding-left: 50px;
+    }
+  .colours__inputs{
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 580px) {
+  .container{
+    grid-template-columns: 50vw 50vw;
+    grid-template-areas: "dress pickers";
+  }
+  .dress {
+    padding: 0;
+    transform: scale(0.7);
+  }
+  .dress.overlay-dress{
+  padding: 0;
+  }
+  .colours__inputs{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+    .container{
+      grid-template-columns: 50vw 50vw;
+      grid-template-areas: "dress pickers";
+    }
     .dress {
-      align-items: start;
-      justify-content: start;
+      padding: 0;
+      transform: scale(0.75);
+    }
+    .dress.overlay-dress{
+    padding: 0;
     }
 }
-  @media (max-width: 460px) {
-    .dress {
-      transform: scale(0.7);
-    }
-  }
