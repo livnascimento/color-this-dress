@@ -2,11 +2,13 @@
 
 *{
     font-family: 'Montserrat';
+    padding: 0;
+    margin: 0px;
 }
 
 body{
     height: 100%;
-    display: flex;
+    display: grid;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,10 +41,12 @@ body{
 }
 
 .input-wrapper{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
+  height: 90px;
+  width: 174px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .input-wrapper label{
@@ -50,14 +54,17 @@ body{
 }
 
 .colours__inputs {
-    display: flex;
+  position: absolute;
+  bottom: 1em;
+  display: flex;
+  flex-direction: column;
   }
 
 .colours__inputs input{
     border: none;
     display: block;
     height: 40px;
-    width: 150px;
+    width: 100%;
     margin: 0;
     text-align: center;
     border-radius: 6px;
@@ -68,28 +75,30 @@ body{
 .btn.btn-random{
     color: #222;
     font-weight: bold;
-    height: 100%;
-    width: 150px;
+    height: 40px;
+    width: 100%;
     border: 0;
     border-radius: 6px;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 940px) {
-    body{
-        flex-direction: column;
-    }
     .dress {
-      transform: scale(0.98);
+      height: 50%;
+      transform: scale(0.8);
+    }
+    .colours__inputs{
+      flex-direction: column;
     }
   }
   @media (max-width: 580px) {
     .dress {
-      transform: scale(0.95);
+      align-items: start;
+      justify-content: start;
     }
-  }
+}
   @media (max-width: 460px) {
     .dress {
-      transform: scale(0.9);
+      transform: scale(0.7);
     }
   }

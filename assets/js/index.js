@@ -12,18 +12,16 @@ $(document).ready(function(){
 
 var generator = function() {
     newBg = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
-    console.log(newBg.length);
     if (newBg.length < 7) generator();
 
     newDressColor = '#' + (Math.random()*0xFFFFFF<<0).toString(16);
-    console.log(newDressColor.length);
     if (newDressColor.length < 7) generator();
 };
 
 $(document).ready(function() {
     $('#gnr-random').click(function () {
+        
         generator();
-
 
         $('body').css("background-color", newBg);
         $("#dress-overlay").css({'fill': newDressColor});
